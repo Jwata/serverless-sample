@@ -57,18 +57,16 @@ plugins:
 #    - exclude-me-dir/**
 
 functions:
-  helloWorld:
-    handler: handler.helloWorld
+  hello:
+    handler: handler.hello
     events:
       - http:
-          path: hello/world
+          path: hello/{token}
           method: get
-  helloEverybody:
-    handler: handler.helloEverybody
-    events:
-      - http:
-          path: hello/everybody
-          method: get
+          request:
+          parameters:
+            paths:
+              token: true
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events

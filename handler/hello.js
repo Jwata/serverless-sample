@@ -1,15 +1,8 @@
-module.exports.world = (event, context, callback) => {
+module.exports.show = (event, context, callback) => {
+    const token = (event && event.path && event.path.token)|| '';
     const response = {
         statusCode: 200,
-        body: JSON.stringify({ message: 'world' })
-    };
-    callback(null, response);
-};
-
-module.exports.everybody = (event, context, callback) => {
-    const response = {
-        statusCode: 200,
-        body: JSON.stringify({ message: 'everybody' })
+        body: JSON.stringify({ token })
     };
     callback(null, response);
 };
