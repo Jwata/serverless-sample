@@ -21,6 +21,9 @@ provider:
   name: aws
   runtime: nodejs4.3
 
+plugins:
+  - serverless-webpack
+
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1
@@ -54,11 +57,17 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  helloWorld:
+    handler: handler.helloWorld
     events:
       - http:
-          path: hello
+          path: hello/world
+          method: get
+  helloEverybody:
+    handler: handler.helloEverybody
+    events:
+      - http:
+          path: hello/everybody
           method: get
 
 #    The following are a few example events you can configure
@@ -90,5 +99,3 @@ functions:
 #       Description: "Description for the output"
 #       Value: "Some output value"
 
-plugins:
-  - serverless-webpack

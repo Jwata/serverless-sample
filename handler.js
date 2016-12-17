@@ -1,11 +1,4 @@
-module.exports.hello = (event, context, callback) => {
-    const response = {
-        statusCode: 200,
-        body: JSON.stringify({
-            message: 'Go Serverless v1.0! Your function executed successfully!',
-            input: event,
-        }),
-    }
+const hello = require('./handler/hello');
 
-    callback(null, response)
-}
+module.exports.helloWorld = hello.world;
+module.exports.helloEverybody = hello.everybody;
