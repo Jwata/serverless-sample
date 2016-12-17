@@ -8,7 +8,11 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "keyword-extractor": "0.0.13",
+    "mstranslator": "^2.1.0"
+  },
   "devDependencies": {
     "serverless": "^1.4.0",
     "serverless-webpack": "^1.0.0-rc.2"

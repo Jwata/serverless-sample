@@ -1,3 +1,4 @@
-const hello = require('./handler/hello');
+const translate = require('./handler/translate');
 
-module.exports.hello = hello.show;
+module.exports.translateText = translate.text;
+module.exports.translateKeywords = translate.keywords;

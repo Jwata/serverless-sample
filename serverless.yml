@@ -63,16 +63,18 @@ plugins:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  translateText:
+    handler: handler.translateText
     events:
       - http:
-          path: hello/{token}
-          method: get
-          request:
-          parameters:
-            paths:
-              token: true
+          path: translate/text
+          method: post
+  translateKeywords:
+    handler: handler.translateKeywords
+    events:
+      - http:
+          path: translate/keywords
+          method: post
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
